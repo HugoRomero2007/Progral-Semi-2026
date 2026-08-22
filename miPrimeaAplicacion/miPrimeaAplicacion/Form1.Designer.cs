@@ -41,18 +41,18 @@
             // 
             // txtSerie
             // 
-            this.txtSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSerie.Location = new System.Drawing.Point(209, 15);
+            this.txtSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSerie.Location = new System.Drawing.Point(197, 19);
             this.txtSerie.Name = "txtSerie";
-            this.txtSerie.Size = new System.Drawing.Size(100, 29);
+            this.txtSerie.Size = new System.Drawing.Size(120, 24);
             this.txtSerie.TabIndex = 1;
             // 
             // ltsValores
             // 
             this.ltsValores.FormattingEnabled = true;
-            this.ltsValores.Location = new System.Drawing.Point(98, 176);
+            this.ltsValores.Location = new System.Drawing.Point(65, 176);
             this.ltsValores.Name = "ltsValores";
-            this.ltsValores.Size = new System.Drawing.Size(120, 95);
+            this.ltsValores.Size = new System.Drawing.Size(153, 95);
             this.ltsValores.TabIndex = 2;
             // 
             // btnProcesar
