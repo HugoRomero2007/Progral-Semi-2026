@@ -27,6 +27,7 @@
             this.txtSerie = new System.Windows.Forms.TextBox();
             this.ltsValores = new System.Windows.Forms.ListBox();
             this.btnProcesar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblSerie
@@ -50,15 +51,15 @@
             // ltsValores
             // 
             this.ltsValores.FormattingEnabled = true;
-            this.ltsValores.Location = new System.Drawing.Point(65, 176);
+            this.ltsValores.Location = new System.Drawing.Point(12, 176);
             this.ltsValores.Name = "ltsValores";
-            this.ltsValores.Size = new System.Drawing.Size(153, 95);
+            this.ltsValores.Size = new System.Drawing.Size(240, 95);
             this.ltsValores.TabIndex = 2;
             // 
             // btnProcesar
             // 
             this.btnProcesar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnProcesar.Location = new System.Drawing.Point(268, 201);
+            this.btnProcesar.Location = new System.Drawing.Point(271, 176);
             this.btnProcesar.Name = "btnProcesar";
             this.btnProcesar.Size = new System.Drawing.Size(120, 38);
             this.btnProcesar.TabIndex = 3;
@@ -66,11 +67,23 @@
             this.btnProcesar.UseVisualStyleBackColor = true;
             this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(271, 220);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(120, 42);
+            this.btnLimpiar.TabIndex = 4;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(491, 332);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnProcesar);
             this.Controls.Add(this.ltsValores);
             this.Controls.Add(this.txtSerie);
@@ -88,6 +101,7 @@
         private System.Windows.Forms.TextBox txtSerie;
         private System.Windows.Forms.ListBox ltsValores;
         private System.Windows.Forms.Button btnProcesar;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
 
