@@ -1,10 +1,12 @@
-﻿using System;
-using System.Windows.Forms;
+﻿using ImpuestoActividadesEconomicas;
+using System;
+using System.Windows.Forms; 
 
-namespace SistemaEstadistico
+namespace miPrimeaAplicacion
 {
     internal static class Program
     {
+        
         [STAThread]
         static void Main()
         {
