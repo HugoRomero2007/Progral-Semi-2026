@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace miPrimeaAplicacion
+namespace SistemaEstadistico
 {
     internal static class Program
     {
-        
-
-
         [STAThread]
         static void Main()
         {
