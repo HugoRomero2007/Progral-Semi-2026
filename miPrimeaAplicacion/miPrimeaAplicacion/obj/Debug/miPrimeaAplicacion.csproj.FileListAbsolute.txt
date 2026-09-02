@@ -49,7 +49,6 @@ C:\Users\romero jr\Desktop\PROGRA\miPrimeaAplicacion\miPrimeaAplicacion\obj\Debu
 C:\Users\romero jr\Desktop\PROGRA\miPrimeaAplicacion\miPrimeaAplicacion\obj\Debug\miPrimeaAplicacion.exe
 C:\Users\romero jr\Desktop\PROGRA\miPrimeaAplicacion\miPrimeaAplicacion\obj\Debug\miPrimeaAplicacion.pdb
 C:\Users\romero jr\Desktop\Programacion\miPrimeaAplicacion\miPrimeaAplicacion\obj\Debug\miPrimeaAplicacion.csproj.AssemblyReference.cache
-C:\Users\romero jr\Desktop\Programacion\miPrimeaAplicacion\miPrimeaAplicacion\obj\Debug\ImpuestoActividadesEconomicas.Form1.resources
 C:\Users\romero jr\Desktop\Programacion\miPrimeaAplicacion\miPrimeaAplicacion\obj\Debug\miPrimeaAplicacion.Properties.Resources.resources
 C:\Users\romero jr\Desktop\Programacion\miPrimeaAplicacion\miPrimeaAplicacion\obj\Debug\miPrimeaAplicacion.csproj.GenerateResource.cache
 C:\Users\romero jr\Desktop\Programacion\miPrimeaAplicacion\miPrimeaAplicacion\obj\Debug\miPrimeaAplicacion.csproj.CoreCompileInputs.cache
@@ -58,3 +57,4 @@ C:\Users\romero jr\Desktop\Programacion\miPrimeaAplicacion\miPrimeaAplicacion\bi
 C:\Users\romero jr\Desktop\Programacion\miPrimeaAplicacion\miPrimeaAplicacion\bin\Debug\miPrimeaAplicacion.pdb
 C:\Users\romero jr\Desktop\Programacion\miPrimeaAplicacion\miPrimeaAplicacion\obj\Debug\miPrimeaAplicacion.exe
 C:\Users\romero jr\Desktop\Programacion\miPrimeaAplicacion\miPrimeaAplicacion\obj\Debug\miPrimeaAplicacion.pdb
+C:\Users\romero jr\Desktop\Programacion\miPrimeaAplicacion\miPrimeaAplicacion\obj\Debug\ConversorArea.Form1.resources

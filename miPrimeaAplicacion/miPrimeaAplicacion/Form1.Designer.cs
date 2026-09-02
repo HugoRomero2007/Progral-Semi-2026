@@ -1,4 +1,4 @@
-﻿namespace ImpuestoActividadesEconomicas
+﻿namespace ConversorArea
 {
     partial class Form1
     {
@@ -21,192 +21,167 @@
         {
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblSubtitulo = new System.Windows.Forms.Label();
-            this.lblMonto = new System.Windows.Forms.Label();
-            this.txtMonto = new System.Windows.Forms.TextBox();
-            this.btnCalcular = new System.Windows.Forms.Button();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.txtValor = new System.Windows.Forms.TextBox();
+            this.lblDe = new System.Windows.Forms.Label();
+            this.cmbDe = new System.Windows.Forms.ComboBox();
+            this.lblA = new System.Windows.Forms.Label();
+            this.cmbA = new System.Windows.Forms.ComboBox();
+            this.btnConvertir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.grpResultados = new System.Windows.Forms.GroupBox();
-            this.lblResultadoImpuesto = new System.Windows.Forms.Label();
-            this.lblResultadoRango = new System.Windows.Forms.Label();
-            this.dgvTablaImpuestos = new System.Windows.Forms.DataGridView();
-            this.colNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDesde = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colHasta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colAdicional = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grpResultados.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaImpuestos)).BeginInit();
+            this.grpResultado = new System.Windows.Forms.GroupBox();
+            this.lblResultado = new System.Windows.Forms.Label();
+            this.grpResultado.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.ForeColor = System.Drawing.Color.Crimson;
-            this.lblTitulo.Location = new System.Drawing.Point(211, 0);
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI Black", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.Color.Navy;
+            this.lblTitulo.Location = new System.Drawing.Point(174, 9);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(329, 25);
+            this.lblTitulo.Size = new System.Drawing.Size(195, 25);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Sistema para calcular los impuestos \r\n";
+            this.lblTitulo.Text = "Conversor de areas \r\n";
             // 
             // lblSubtitulo
             // 
             this.lblSubtitulo.AutoSize = true;
-            this.lblSubtitulo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblSubtitulo.Location = new System.Drawing.Point(236, 43);
+            this.lblSubtitulo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSubtitulo.Location = new System.Drawing.Point(157, 55);
             this.lblSubtitulo.Name = "lblSubtitulo";
-            this.lblSubtitulo.Size = new System.Drawing.Size(269, 19);
+            this.lblSubtitulo.Size = new System.Drawing.Size(278, 17);
             this.lblSubtitulo.TabIndex = 1;
-            this.lblSubtitulo.Text = "Impuesto a las Actividades Económicas";
+            this.lblSubtitulo.Text = "Unidades Agrarias y Métricas de El Salvador";
             // 
-            // lblMonto
+            // lblValor
             // 
-            this.lblMonto.AutoSize = true;
-            this.lblMonto.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMonto.Location = new System.Drawing.Point(25, 90);
-            this.lblMonto.Name = "lblMonto";
-            this.lblMonto.Size = new System.Drawing.Size(206, 17);
-            this.lblMonto.TabIndex = 2;
-            this.lblMonto.Text = "Monto Actividad Económica ($):";
+            this.lblValor.AutoSize = true;
+            this.lblValor.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValor.Location = new System.Drawing.Point(40, 95);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(115, 17);
+            this.lblValor.TabIndex = 2;
+            this.lblValor.Text = "Valor a convertir:";
             // 
-            // txtMonto
+            // txtValor
             // 
-            this.txtMonto.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtMonto.Location = new System.Drawing.Point(240, 87);
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(160, 25);
-            this.txtMonto.TabIndex = 3;
+            this.txtValor.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.txtValor.Location = new System.Drawing.Point(160, 92);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(320, 25);
+            this.txtValor.TabIndex = 3;
             // 
-            // btnCalcular
+            // lblDe
             // 
-            this.btnCalcular.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalcular.ForeColor = System.Drawing.Color.Black;
-            this.btnCalcular.Location = new System.Drawing.Point(420, 83);
-            this.btnCalcular.Name = "btnCalcular";
-            this.btnCalcular.Size = new System.Drawing.Size(120, 32);
-            this.btnCalcular.TabIndex = 4;
-            this.btnCalcular.Text = "Calcular";
-            this.btnCalcular.UseVisualStyleBackColor = true;
-            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            this.lblDe.AutoSize = true;
+            this.lblDe.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDe.Location = new System.Drawing.Point(40, 135);
+            this.lblDe.Name = "lblDe";
+            this.lblDe.Size = new System.Drawing.Size(29, 17);
+            this.lblDe.TabIndex = 4;
+            this.lblDe.Text = "De:";
+            // 
+            // cmbDe
+            // 
+            this.cmbDe.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDe.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbDe.FormattingEnabled = true;
+            this.cmbDe.Location = new System.Drawing.Point(160, 132);
+            this.cmbDe.Name = "cmbDe";
+            this.cmbDe.Size = new System.Drawing.Size(320, 25);
+            this.cmbDe.TabIndex = 5;
+            // 
+            // lblA
+            // 
+            this.lblA.AutoSize = true;
+            this.lblA.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblA.Location = new System.Drawing.Point(40, 175);
+            this.lblA.Name = "lblA";
+            this.lblA.Size = new System.Drawing.Size(21, 17);
+            this.lblA.TabIndex = 6;
+            this.lblA.Text = "A:";
+            // 
+            // cmbA
+            // 
+            this.cmbA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbA.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbA.FormattingEnabled = true;
+            this.cmbA.Location = new System.Drawing.Point(160, 172);
+            this.cmbA.Name = "cmbA";
+            this.cmbA.Size = new System.Drawing.Size(320, 25);
+            this.cmbA.TabIndex = 7;
+            // 
+            // btnConvertir
+            // 
+            this.btnConvertir.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnConvertir.ForeColor = System.Drawing.Color.Black;
+            this.btnConvertir.Location = new System.Drawing.Point(160, 215);
+            this.btnConvertir.Name = "btnConvertir";
+            this.btnConvertir.Size = new System.Drawing.Size(155, 32);
+            this.btnConvertir.TabIndex = 8;
+            this.btnConvertir.Text = "Convertir";
+            this.btnConvertir.UseVisualStyleBackColor = true;
+            this.btnConvertir.Click += new System.EventHandler(this.btnConvertir_Click);
             // 
             // btnLimpiar
             // 
             this.btnLimpiar.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpiar.Location = new System.Drawing.Point(550, 83);
+            this.btnLimpiar.Location = new System.Drawing.Point(325, 215);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(100, 32);
-            this.btnLimpiar.TabIndex = 5;
+            this.btnLimpiar.Size = new System.Drawing.Size(155, 32);
+            this.btnLimpiar.TabIndex = 9;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
-            // grpResultados
+            // grpResultado
             // 
-            this.grpResultados.Controls.Add(this.lblResultadoImpuesto);
-            this.grpResultados.Controls.Add(this.lblResultadoRango);
-            this.grpResultados.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.grpResultados.Location = new System.Drawing.Point(28, 130);
-            this.grpResultados.Name = "grpResultados";
-            this.grpResultados.Size = new System.Drawing.Size(680, 85);
-            this.grpResultados.TabIndex = 6;
-            this.grpResultados.TabStop = false;
-            this.grpResultados.Text = "Resultado del Cálculo";
+            this.grpResultado.Controls.Add(this.lblResultado);
+            this.grpResultado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.grpResultado.Location = new System.Drawing.Point(40, 265);
+            this.grpResultado.Name = "grpResultado";
+            this.grpResultado.Size = new System.Drawing.Size(440, 80);
+            this.grpResultado.TabIndex = 10;
+            this.grpResultado.TabStop = false;
+            this.grpResultado.Text = "Resultado";
             // 
-            // lblResultadoImpuesto
+            // lblResultado
             // 
-            this.lblResultadoImpuesto.AutoSize = true;
-            this.lblResultadoImpuesto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblResultadoImpuesto.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lblResultadoImpuesto.Location = new System.Drawing.Point(15, 52);
-            this.lblResultadoImpuesto.Name = "lblResultadoImpuesto";
-            this.lblResultadoImpuesto.Size = new System.Drawing.Size(160, 21);
-            this.lblResultadoImpuesto.TabIndex = 1;
-            this.lblResultadoImpuesto.Text = "Valor a pagar: $0.00";
-            // 
-            // lblResultadoRango
-            // 
-            this.lblResultadoRango.AutoSize = true;
-            this.lblResultadoRango.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResultadoRango.Location = new System.Drawing.Point(15, 25);
-            this.lblResultadoRango.Name = "lblResultadoRango";
-            this.lblResultadoRango.Size = new System.Drawing.Size(136, 17);
-            this.lblResultadoRango.TabIndex = 0;
-            this.lblResultadoRango.Text = "Tramo aplicado: N/A";
-            // 
-            // dgvTablaImpuestos
-            // 
-            this.dgvTablaImpuestos.AllowUserToAddRows = false;
-            this.dgvTablaImpuestos.AllowUserToDeleteRows = false;
-            this.dgvTablaImpuestos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTablaImpuestos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colNum,
-            this.colDesde,
-            this.colHasta,
-            this.colPrecio,
-            this.colAdicional});
-            this.dgvTablaImpuestos.Location = new System.Drawing.Point(28, 230);
-            this.dgvTablaImpuestos.Name = "dgvTablaImpuestos";
-            this.dgvTablaImpuestos.ReadOnly = true;
-            this.dgvTablaImpuestos.Size = new System.Drawing.Size(680, 220);
-            this.dgvTablaImpuestos.TabIndex = 7;
-            // 
-            // colNum
-            // 
-            this.colNum.HeaderText = "No.";
-            this.colNum.Name = "colNum";
-            this.colNum.ReadOnly = true;
-            this.colNum.Width = 50;
-            // 
-            // colDesde
-            // 
-            this.colDesde.HeaderText = "Desde ($)";
-            this.colDesde.Name = "colDesde";
-            this.colDesde.ReadOnly = true;
-            this.colDesde.Width = 140;
-            // 
-            // colHasta
-            // 
-            this.colHasta.HeaderText = "Hasta ($)";
-            this.colHasta.Name = "colHasta";
-            this.colHasta.ReadOnly = true;
-            this.colHasta.Width = 140;
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.HeaderText = "Precio Fijo ($)";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.ReadOnly = true;
-            this.colPrecio.Width = 140;
-            // 
-            // colAdicional
-            // 
-            this.colAdicional.HeaderText = "Adicional ($)";
-            this.colAdicional.Name = "colAdicional";
-            this.colAdicional.ReadOnly = true;
-            this.colAdicional.Width = 140;
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblResultado.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblResultado.Location = new System.Drawing.Point(15, 35);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(136, 21);
+            this.lblResultado.TabIndex = 0;
+            this.lblResultado.Text = "0.00 equivalente";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(738, 470);
-            this.Controls.Add(this.dgvTablaImpuestos);
-            this.Controls.Add(this.grpResultados);
+            this.ClientSize = new System.Drawing.Size(520, 375);
+            this.Controls.Add(this.grpResultado);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.btnCalcular);
-            this.Controls.Add(this.txtMonto);
-            this.Controls.Add(this.lblMonto);
+            this.Controls.Add(this.btnConvertir);
+            this.Controls.Add(this.cmbA);
+            this.Controls.Add(this.lblA);
+            this.Controls.Add(this.cmbDe);
+            this.Controls.Add(this.lblDe);
+            this.Controls.Add(this.txtValor);
+            this.Controls.Add(this.lblValor);
             this.Controls.Add(this.lblSubtitulo);
             this.Controls.Add(this.lblTitulo);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Cálculo de Impuesto a las Actividades Económicas";
+            this.Text = "Conversor de Superficie";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.grpResultados.ResumeLayout(false);
-            this.grpResultados.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTablaImpuestos)).EndInit();
+            this.grpResultado.ResumeLayout(false);
+            this.grpResultado.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,18 +191,15 @@
 
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblSubtitulo;
-        private System.Windows.Forms.Label lblMonto;
-        private System.Windows.Forms.TextBox txtMonto;
-        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.Label lblDe;
+        private System.Windows.Forms.ComboBox cmbDe;
+        private System.Windows.Forms.Label lblA;
+        private System.Windows.Forms.ComboBox cmbA;
+        private System.Windows.Forms.Button btnConvertir;
         private System.Windows.Forms.Button btnLimpiar;
-        private System.Windows.Forms.GroupBox grpResultados;
-        private System.Windows.Forms.Label lblResultadoImpuesto;
-        private System.Windows.Forms.Label lblResultadoRango;
-        private System.Windows.Forms.DataGridView dgvTablaImpuestos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colDesde;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colHasta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colAdicional;
+        private System.Windows.Forms.GroupBox grpResultado;
+        private System.Windows.Forms.Label lblResultado;
     }
 }
