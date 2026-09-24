@@ -94,7 +94,6 @@
             this.Name = "Form1";
             this.Text = "Conversor de Longitud";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
