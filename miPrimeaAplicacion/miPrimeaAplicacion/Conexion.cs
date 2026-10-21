@@ -10,21 +10,21 @@ namespace miPrimeaAplicacion
 {
     public class Conexion
     {
-        // Definir miembros, atributos y objetos de ADO.NET
+        
         public SqlConnection objConexion = new SqlConnection();
         public SqlCommand objComando = new SqlCommand();
         public SqlDataAdapter objDataAdapter = new SqlDataAdapter();
         DataSet objDs = new DataSet();
 
-        // Constructor e inicializador de los miembros de la clase
+        
         public Conexion()
         {
-            // Apunta al archivo .mdf configurado
+            
             String cadenaConexion = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\db_academica.mdf;Integrated Security=True";
 
             objConexion.ConnectionString = cadenaConexion;
 
-            // Verificamos que la conexión esté abierta
+            
             if (objConexion.State == ConnectionState.Closed)
             {
                 objConexion.Open();
@@ -33,46 +33,80 @@ namespace miPrimeaAplicacion
 
         public DataSet obtenerDatos()
         {
-            objDs.Clear(); // Limpiar el dataset
+            objDs.Clear(); 
 
             objComando.Connection = objConexion;
             objDataAdapter.SelectCommand = objComando;
 
-            // 1. Cargar Alumnos
+            
             objComando.CommandText = "SELECT * FROM alumnos";
             objDataAdapter.Fill(objDs, "alumnos");
 
-            // 2. Cargar Materias
+            
             objComando.CommandText = "SELECT * FROM materias";
             objDataAdapter.Fill(objDs, "materias");
 
-            // 3. Cargar Periodos
+            
             objComando.CommandText = "SELECT * FROM periodos";
             objDataAdapter.Fill(objDs, "periodos");
 
-            // 4. Cargar Notas (Se corrigió a.idAlumno en el JOIN)
+           
             objComando.CommandText = "SELECT n.idNota, a.nombre AS Alumno, p.periodo AS Periodo, n.fecha FROM notas n INNER JOIN alumnos a ON n.idAlumno = a.idAlumno INNER JOIN periodos p ON n.idPeriodo = p.idPeriodo";
             objDataAdapter.Fill(objDs, "notas");
 
             return objDs;
         }
 
+        
+
+        
+        public DataSet crearDs(string sql)
+        {
+            DataSet dsUsuarios = new DataSet();
+            objComando.Connection = objConexion;
+            objComando.CommandText = sql;
+            objDataAdapter.SelectCommand = objComando;
+            objDataAdapter.Fill(dsUsuarios, "usuarios_usss126226");
+            return dsUsuarios;
+        }
+
+        
+        public bool procesar(string sql)
+        {
+            try
+            {
+                objComando.Connection = objConexion;
+                objComando.CommandText = sql;
+                int filasAfectadas = objComando.ExecuteNonQuery();
+                return filasAfectadas > 0;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+       
+        public bool mantenimiento_usuarios_usss126226(string sentenciaSql)
+        {
+            return procesar(sentenciaSql);
+        }
+
+       
+
         public string administrarDatosAlumnos(String[] datos, String accion)
         {
             String sql = "";
             if (accion == "nuevo")
             {
-                // Se corrigió [codigo] sin tilde
                 sql = "INSERT INTO alumnos (codigo, nombre, direccion, telefono, email) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "', '" + datos[4] + "', '')";
             }
             else if (accion == "modificar")
             {
-                // Se corrigió idAlumno
                 sql = "UPDATE alumnos SET codigo='" + datos[1] + "', nombre='" + datos[2] + "', direccion='" + datos[3] + "', telefono='" + datos[4] + "' WHERE idAlumno=" + datos[0];
             }
             else if (accion == "eliminar")
             {
-                // Se corrigió idAlumno
                 sql = "DELETE FROM alumnos WHERE idAlumno=" + datos[0];
             }
             return ejecutarSQL(sql);
