@@ -28,18 +28,20 @@
             // lblUsuarioLogin
             // 
             this.lblUsuarioLogin.AutoSize = true;
+            this.lblUsuarioLogin.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuarioLogin.Location = new System.Drawing.Point(40, 45);
             this.lblUsuarioLogin.Name = "lblUsuarioLogin";
-            this.lblUsuarioLogin.Size = new System.Drawing.Size(57, 16);
+            this.lblUsuarioLogin.Size = new System.Drawing.Size(60, 24);
             this.lblUsuarioLogin.TabIndex = 0;
             this.lblUsuarioLogin.Text = "Usuario:";
             // 
             // lblClaveLogin
             // 
             this.lblClaveLogin.AutoSize = true;
+            this.lblClaveLogin.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClaveLogin.Location = new System.Drawing.Point(40, 85);
             this.lblClaveLogin.Name = "lblClaveLogin";
-            this.lblClaveLogin.Size = new System.Drawing.Size(45, 16);
+            this.lblClaveLogin.Size = new System.Drawing.Size(47, 24);
             this.lblClaveLogin.TabIndex = 1;
             this.lblClaveLogin.Text = "Clave:";
             // 
@@ -61,19 +63,22 @@
             // 
             // btnIngresar
             // 
+            this.btnIngresar.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnIngresar.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Location = new System.Drawing.Point(43, 148);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(109, 30);
+            this.btnIngresar.Size = new System.Drawing.Size(109, 39);
             this.btnIngresar.TabIndex = 4;
             this.btnIngresar.Text = "Iniciar Sesion";
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.UseVisualStyleBackColor = false;
             this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Agency FB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(181, 148);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 30);
+            this.button1.Size = new System.Drawing.Size(109, 39);
             this.button1.TabIndex = 5;
             this.button1.Text = "Cerrar";
             this.button1.UseVisualStyleBackColor = true;
@@ -91,6 +96,7 @@
             this.Name = "frm_login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inicio de Sesión";
+            this.Load += new System.EventHandler(this.frm_login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

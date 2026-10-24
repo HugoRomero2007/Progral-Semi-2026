@@ -213,5 +213,10 @@ namespace miPrimeAplicacion
         {
 
         }
+
+        private void lblRegistros_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

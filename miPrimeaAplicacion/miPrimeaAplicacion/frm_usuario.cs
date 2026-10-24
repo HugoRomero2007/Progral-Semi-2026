@@ -23,51 +23,62 @@ namespace miPrimeaAplicacion
 
         private void frm_usuario_Load(object sender, EventArgs e)
         {
-            // Vinculamos los eventos de la tabla por código para detectar celdas y encabezados de fila
             this.dataGridView1.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
             this.dataGridView1.RowHeaderMouseClick += new DataGridViewCellMouseEventHandler(dataGridView1_RowHeaderMouseClick);
-
             ActualizarDatos();
         }
 
         private void ActualizarDatos()
         {
-            string sql = "SELECT * FROM usuarios_usss126226";
-            dsUsuarios = objConexion.crearDs(sql);
-
-            if (dsUsuarios.Tables.Count > 0 && dsUsuarios.Tables[0].Rows.Count > 0)
+            try
             {
-                dataGridView1.DataSource = dsUsuarios.Tables[0];
-                posicion = 0;
-                MostrarDatos();
+                string sql = "SELECT * FROM usuarios_usss126226";
+                dsUsuarios = objConexion.crearDs(sql);
 
-                // Selecciona visualmente la primera fila al cargar
-                if (dataGridView1.Rows.Count > 0)
+                if (dsUsuarios.Tables.Count > 0 && dsUsuarios.Tables[0].Rows.Count > 0)
                 {
-                    dataGridView1.ClearSelection();
-                    dataGridView1.Rows[0].Selected = true;
+                    dataGridView1.DataSource = dsUsuarios.Tables[0];
+                    posicion = 0;
+                    MostrarDatos();
+
+                    if (dataGridView1.Rows.Count > 0)
+                    {
+                        dataGridView1.ClearSelection();
+                        dataGridView1.Rows[0].Selected = true;
+                    }
+                }
+                else
+                {
+                    dataGridView1.DataSource = null;
+                    LimpiarCampos();
                 }
             }
-            else
+            catch (Exception ex)
             {
-                dataGridView1.DataSource = null;
-                LimpiarCampos();
+                MessageBox.Show("Error al cargar datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void MostrarDatos()
         {
-            DataTable tabla = dsUsuarios.Tables[0];
-            if (tabla.Rows.Count > 0 && posicion >= 0 && posicion < tabla.Rows.Count)
+            try
             {
-                DataRow fila = tabla.Rows[posicion];
-                txtId.Text = fila[0].ToString();             // idUsuario
-                txtUsuario.Text = fila[1].ToString();        // usuario
-                txtClave.Text = fila[2].ToString();          // clave
-                txtConfirmarClave.Text = fila[2].ToString(); // confirmar clave
-                txtNombre.Text = fila[3].ToString();         // nombre
-                txtDireccion.Text = fila[4].ToString();      // dirección
-                txtTelefono.Text = fila[5].ToString();       // teléfono
+                DataTable tabla = dsUsuarios.Tables[0];
+                if (tabla.Rows.Count > 0 && posicion >= 0 && posicion < tabla.Rows.Count)
+                {
+                    DataRow fila = tabla.Rows[posicion];
+                    txtId.Text = fila[0].ToString();             // idUsuario
+                    txtUsuario.Text = fila[1].ToString();        // usuario
+                    txtClave.Text = fila[2].ToString();          // clave
+                    txtConfirmarClave.Text = fila[2].ToString(); // confirmar clave
+                    txtNombre.Text = fila[3].ToString();         // nombre
+                    txtDireccion.Text = fila[4].ToString();      // dirección
+                    txtTelefono.Text = fila[5].ToString();       // teléfono
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al mostrar datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -77,7 +88,6 @@ namespace miPrimeaAplicacion
             string clave = txtClave.Text;
             string confirmar = txtConfirmarClave.Text;
 
-            // 1. Validar longitud del usuario (mínimo 6, máximo 16 caracteres)[cite: 1]
             if (usuario.Length < 6 || usuario.Length > 16)
             {
                 MessageBox.Show("El usuario debe tener un mínimo de 6 caracteres y un máximo de 16.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -85,7 +95,6 @@ namespace miPrimeaAplicacion
                 return false;
             }
 
-            // 2. Validar que la clave pida confirmación y coincidan[cite: 1]
             if (clave != confirmar)
             {
                 MessageBox.Show("Las contraseñas no coinciden. Por favor verifique.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -93,7 +102,6 @@ namespace miPrimeaAplicacion
                 return false;
             }
 
-            // 3. Validar que la clave contenga letras y números[cite: 1]
             bool tieneLetras = false;
             bool tieneNumeros = false;
             foreach (char c in clave)
@@ -116,64 +124,89 @@ namespace miPrimeaAplicacion
         {
             if (!ValidarCampos()) return;
 
-            string[] datos = {
-                txtUsuario.Text.Trim(),
-                txtClave.Text.Trim(),
-                txtNombre.Text.Trim(),
-                txtDireccion.Text.Trim(),
-                txtTelefono.Text.Trim()
-            };
+            try
+            {
+                string[] datos = {
+                    txtUsuario.Text.Trim(),
+                    txtClave.Text.Trim(),
+                    txtNombre.Text.Trim(),
+                    txtDireccion.Text.Trim(),
+                    txtTelefono.Text.Trim()
+                };
 
-            string respuesta = objConexion.mantenimiento_usuarios_usss126226(datos, "nuevo");
+                // SE INCLUYE EL SEGUNDO PARÁMETRO ("nuevo")
+                string respuesta = objConexion.mantenimiento_usuarios_usss126226(datos, "nuevo");
 
-            MessageBox.Show("¡Usuario registrado exitosamente!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ActualizarDatos();
-            LimpiarCampos();
+                MessageBox.Show("Usuario agregado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ActualizarDatos();
+                LimpiarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtId.Text))
             {
-                MessageBox.Show("Seleccione un registro para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione un registro de la tabla para modificar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (!ValidarCampos()) return;
 
-            string[] datos = {
-                txtUsuario.Text.Trim(),
-                txtClave.Text.Trim(),
-                txtNombre.Text.Trim(),
-                txtDireccion.Text.Trim(),
-                txtTelefono.Text.Trim(),
-                txtId.Text.Trim()
-            };
+            try
+            {
+                string[] datos = {
+                    txtUsuario.Text.Trim(),
+                    txtClave.Text.Trim(),
+                    txtNombre.Text.Trim(),
+                    txtDireccion.Text.Trim(),
+                    txtTelefono.Text.Trim(),
+                    txtId.Text.Trim()
+                };
 
-            string respuesta = objConexion.mantenimiento_usuarios_usss126226(datos, "modificar");
+                // SE INCLUYE EL SEGUNDO PARÁMETRO ("modificar")
+                string respuesta = objConexion.mantenimiento_usuarios_usss126226(datos, "modificar");
 
-            MessageBox.Show("Usuario modificado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            ActualizarDatos();
+                MessageBox.Show("Usuario modificado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ActualizarDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al modificar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtId.Text))
             {
-                MessageBox.Show("Seleccione un registro para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Seleccione un registro de la tabla para eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             DialogResult resultado = MessageBox.Show("¿Está seguro de eliminar este usuario?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (resultado == DialogResult.Yes)
             {
-                string[] datos = { "", "", "", "", "", txtId.Text.Trim() };
-                string respuesta = objConexion.mantenimiento_usuarios_usss126226(datos, "eliminar");
+                try
+                {
+                    string[] datos = { "", "", "", "", "", txtId.Text.Trim() };
 
-                MessageBox.Show("Usuario eliminado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                posicion = 0;
-                ActualizarDatos();
-                LimpiarCampos();
+                    // SE INCLUYE EL SEGUNDO PARÁMETRO ("eliminar")
+                    string respuesta = objConexion.mantenimiento_usuarios_usss126226(datos, "eliminar");
+
+                    MessageBox.Show("Usuario eliminado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    posicion = 0;
+                    ActualizarDatos();
+                    LimpiarCampos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -188,10 +221,6 @@ namespace miPrimeaAplicacion
             txtTelefono.Text = "";
             txtUsuario.Focus();
         }
-
-        // ==========================================
-        // BOTONES DE NAVEGACIÓN[cite: 1]
-        // ==========================================
 
         private void btnPrimero_Click(object sender, EventArgs e)
         {
@@ -240,9 +269,6 @@ namespace miPrimeaAplicacion
             }
         }
 
-        // ==========================================
-        // EVENTOS DE LA TABLA
-        // ==========================================
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)

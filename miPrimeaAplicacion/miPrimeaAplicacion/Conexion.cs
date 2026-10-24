@@ -48,21 +48,24 @@ namespace miPrimeaAplicacion
             return dsTemporal;
         }
 
-        // Método agregado para el mantenimiento de usuarios
+        // Método corregido para el mantenimiento de usuarios
         public string mantenimiento_usuarios_usss126226(String[] datos, String accion)
         {
             String sql = "";
             if (accion == "nuevo")
             {
-                sql = "INSERT INTO usuarios_usss126226 (usuario, clave) VALUES ('" + datos[1] + "', '" + datos[2] + "')";
+                // Orden: usuario [0], clave [1], nombre [2], direccion [3], telefono [4]
+                sql = "INSERT INTO usuarios_usss126226 (usuario, clave, nombre, dirección, teléfono) VALUES ('" + datos[0] + "', '" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "', '" + datos[4] + "')";
             }
             else if (accion == "modificar")
             {
-                sql = "UPDATE usuarios_usss126226 SET usuario='" + datos[1] + "', clave='" + datos[2] + "' WHERE idUsuario=" + datos[0];
+                // Orden: usuario [0], clave [1], nombre [2], direccion [3], telefono [4], y el ID en [5]
+                sql = "UPDATE usuarios_usss126226 SET usuario='" + datos[0] + "', clave='" + datos[1] + "', nombre='" + datos[2] + "', dirección='" + datos[3] + "', teléfono='" + datos[4] + "' WHERE idUsuario=" + datos[5];
             }
             else if (accion == "eliminar")
             {
-                sql = "DELETE FROM usuarios_usss126226 WHERE idUsuario=" + datos[0];
+                // El ID viaja en la posición [5]
+                sql = "DELETE FROM usuarios_usss126226 WHERE idUsuario=" + datos[5];
             }
             return ejecutarSQL(sql);
         }
@@ -86,7 +89,7 @@ namespace miPrimeaAplicacion
             objComando.CommandText = "SELECT * FROM periodos";
             objDataAdapter.Fill(objDs, "periodos");
 
-            // 4. Cargar Notas (Se corrigió a.idAlumno en el JOIN)
+            // 4. Cargar Notas
             objComando.CommandText = "SELECT n.idNota, a.nombre AS Alumno, p.periodo AS Periodo, n.fecha FROM notas n INNER JOIN alumnos a ON n.idAlumno = a.idAlumno INNER JOIN periodos p ON n.idPeriodo = p.idPeriodo";
             objDataAdapter.Fill(objDs, "notas");
 
@@ -98,17 +101,14 @@ namespace miPrimeaAplicacion
             String sql = "";
             if (accion == "nuevo")
             {
-                // Se corrigió [codigo] sin tilde
                 sql = "INSERT INTO alumnos (codigo, nombre, direccion, telefono, email) VALUES ('" + datos[1] + "', '" + datos[2] + "', '" + datos[3] + "', '" + datos[4] + "', '')";
             }
             else if (accion == "modificar")
             {
-                // Se corrigió idAlumno
                 sql = "UPDATE alumnos SET codigo='" + datos[1] + "', nombre='" + datos[2] + "', direccion='" + datos[3] + "', telefono='" + datos[4] + "' WHERE idAlumno=" + datos[0];
             }
             else if (accion == "eliminar")
             {
-                // Se corrigió idAlumno
                 sql = "DELETE FROM alumnos WHERE idAlumno=" + datos[0];
             }
             return ejecutarSQL(sql);

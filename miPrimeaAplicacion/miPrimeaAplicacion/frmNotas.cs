@@ -147,5 +147,10 @@ namespace miPrimeaAplicacion
         {
 
         }
+
+        private void lblResultadoPromedio_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
