@@ -49,6 +49,7 @@
             this.txtUsuarioLogin.Name = "txtUsuarioLogin";
             this.txtUsuarioLogin.Size = new System.Drawing.Size(180, 22);
             this.txtUsuarioLogin.TabIndex = 2;
+            this.txtUsuarioLogin.TextChanged += new System.EventHandler(this.txtUsuarioLogin_TextChanged);
             // 
             // txtClaveLogin
             // 

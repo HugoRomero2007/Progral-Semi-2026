@@ -22,7 +22,8 @@ namespace miPrimeaAplicacion
             Conexion objConexion = new Conexion();
             DataSet ds = objConexion.crearDs(consulta);
 
-            int registros = Convert.ToInt32(ds.Tables["usuarios_usss126226"].Rows[0][0]);
+            // CORRECCIÓN: Se usa Tables[0] porque SELECT COUNT(*) devuelve una tabla genérica sin nombre específico
+            int registros = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
 
             // Si el usuario está registrado, se le da acceso; de lo contrario se deniega[cite: 1]
             if (registros > 0)
@@ -44,6 +45,11 @@ namespace miPrimeaAplicacion
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtUsuarioLogin_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
