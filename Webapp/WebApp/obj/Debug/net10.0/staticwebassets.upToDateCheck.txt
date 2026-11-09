@@ -1,0 +1,7 @@
+wwwroot\views\alumno.html
+wwwroot\img\logo.png
+wwwroot\views\index.html
+wwwroot\views\app.js
+C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\wwwroot\views\alumno.html
+C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\wwwroot\views\index.html
+C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\wwwroot\views\app.js

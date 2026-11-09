@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using WebApp.Models;
+using WebApp.Models; // Asegúrate de que coincida con el nombre real de tu proyecto
 
-namespace webapp.Models
+namespace WebApp.Models
 {
     public class MyDbContext : DbContext
     {
@@ -14,8 +14,7 @@ namespace webapp.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
-            modelBuilder.Entity<Alumno>().HasKey(a => a.idAlumno);
+            modelBuilder.Entity<Alumno>().HasKey(a => a.IdAlumnos);
         }
     }
 }
