@@ -82,6 +82,13 @@ C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\bin\Debug\net10.0\runtimes\osx
 C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\bin\Debug\net10.0\runtimes\win-arm64\native\msalruntime_arm64.dll
 C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\bin\Debug\net10.0\runtimes\win-x64\native\msalruntime.dll
 C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\bin\Debug\net10.0\runtimes\win-x86\native\msalruntime_x86.dll
+<<<<<<< HEAD
+C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\obj\Debug\net10.0\compressed\qfdz7oa465-{0}-lapv2lwsqg-lapv2lwsqg.gz
+C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\obj\Debug\net10.0\compressed\q9q0gic0ss-{0}-adwlb9lt0x-adwlb9lt0x.gz
+C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\obj\Debug\net10.0\compressed\vpqvmu3037-{0}-jzc66wsi9d-jzc66wsi9d.gz
+C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\obj\Debug\net10.0\compressed\49wpfja8c0-{0}-t7oarpgq8g-t7oarpgq8g.gz
+=======
 C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\obj\Debug\net10.0\compressed\vpqvmu3037-{0}-m36hnxh3tg-m36hnxh3tg.gz
 C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\obj\Debug\net10.0\compressed\qfdz7oa465-{0}-lapv2lwsqg-lapv2lwsqg.gz
 C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\obj\Debug\net10.0\compressed\q9q0gic0ss-{0}-m4ffpnu8nn-m4ffpnu8nn.gz
+>>>>>>> 34dfbba (Creacion de la vista de alumnos, y el scaffolding, tambien se creo la base de datos)
