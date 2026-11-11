@@ -75,11 +75,11 @@ async function guardarAlumno() {
         const respuesta = await fetch(url, {
             method,
             header: { "Content-Type": "application/json" },
-<<<<<<< HEAD
-            body:JSON.stringify(datos)
-=======
+ 
+            body:JSON.stringify(datos),
+
             body:JSON.stringfy(datos)
->>>>>>> 34dfbba (Creacion de la vista de alumnos, y el scaffolding, tambien se creo la base de datos)
+
         }), alumnos = await respuesta.json();
 }
 </script>

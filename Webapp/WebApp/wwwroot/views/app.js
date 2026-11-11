@@ -22,7 +22,6 @@ function cerrarVentana() {
     $('.btn-close').click(e => {
         $(`#${e.target.dataset.form}`).hidden();
     });
-<<<<<<< HEAD
 }
 
 async function obtenerAlumnos(buscar = '') {
@@ -32,6 +31,4 @@ async function obtenerAlumnos(buscar = '') {
     }),
         alumnos = await respuesta.json();
     return alumnos;
-=======
->>>>>>> 34dfbba (Creacion de la vista de alumnos, y el scaffolding, tambien se creo la base de datos)
 }

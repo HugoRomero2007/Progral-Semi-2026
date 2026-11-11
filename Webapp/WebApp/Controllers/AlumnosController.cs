@@ -7,10 +7,9 @@ using WebApp.Models;
 public class AlumnosController : ControllerBase
 {
     private readonly MyDbContext _context;
-<<<<<<< HEAD
+
     private object consulta;
-=======
->>>>>>> 34dfbba (Creacion de la vista de alumnos, y el scaffolding, tambien se creo la base de datos)
+
 
     public AlumnosController(MyDbContext context)
     {
@@ -24,8 +23,7 @@ public class AlumnosController : ControllerBase
         return await _context.Alumnos.ToListAsync();
     }
 
-<<<<<<< HEAD
-    // GET: api/Alumno/buscar
+
     [HttpGet("buscar")]
     public async Task<ActionResult<IEnumerable<Alumno>>> buscarAlumno([FromQuery] AlumnoBusquedaParametros parametros)
     {
@@ -39,8 +37,7 @@ public class AlumnosController : ControllerBase
         return await consulta.ToListAsync();
     }
 
-=======
->>>>>>> 34dfbba (Creacion de la vista de alumnos, y el scaffolding, tambien se creo la base de datos)
+
     // GET: api/Alumnos/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Alumno>> GetAlumno(int id)

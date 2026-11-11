@@ -109,7 +109,6 @@
     "ReturnTypes": []
   },
   {
-<<<<<<< HEAD
     "ContainingType": "AlumnosController",
     "Method": "buscarAlumno",
     "RelativePath": "api/Alumnos/buscar",
@@ -136,8 +135,6 @@
     ]
   },
   {
-=======
->>>>>>> 34dfbba (Creacion de la vista de alumnos, y el scaffolding, tambien se creo la base de datos)
     "ContainingType": "WebApp.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

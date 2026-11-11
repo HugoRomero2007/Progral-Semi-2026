@@ -90,7 +90,6 @@
         }
       }
     },
-<<<<<<< HEAD
     "/api/Alumnos/buscar": {
       "get": {
         "tags": [
@@ -138,8 +137,6 @@
         }
       }
     },
-=======
->>>>>>> 34dfbba (Creacion de la vista de alumnos, y el scaffolding, tambien se creo la base de datos)
     "/api/Alumnos/{id}": {
       "get": {
         "tags": [
