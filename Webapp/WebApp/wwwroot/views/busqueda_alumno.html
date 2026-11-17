@@ -1,4 +1,4 @@
-﻿﻿<form id="frmBusquedaAlumno">
+﻿<form id="frmBusquedaAlumno">
     <div class="card theme-secondary" style="min-width:700px;">
         <div class="card-header">
             <div class="d-flex">
@@ -32,36 +32,46 @@
         </div>
     </div>
 </form>
- <script>
-       
-         const txtBuscarAlumno = document.getElementById('txtBuscarAlumno') as HTMLInputElement;
+<script>
+listarAlumnos();
 
-         if (txtBuscarAlumno) {
-             txtBuscarAlumno.addEventListener('keyup', (e: KeyboardEvent) => {
-                 listarAlumnos(txtBuscarAlumno.value);
-             });
-         }
+txtBuscarAlumno.addEventListener('keyup', e => {
+        listarAlumnos(txtBuscarAlumno.value);
+        });
+        async function listarAlumnos(buscar='') {
+            let alumnos = await obtenerAlumnos(buscar),
+                filas = '';
+            alumnos.forEach(alumno => {
+                filas += `
+                    <tr onClick='mostrarDatosAlumno(${JSON.stringify(alumno)})'>
+                        <td>${alumno.codigo}</td>
+                        <td>${alumno.nombre}</td>
+                        <td>${alumno.direccion}</td>
+                        <td>${alumno.telefono}</td>
+                        <td>${alumno.email}</td>
+                        <td><input type="button" onClick='eliminarAlumno(${JSON.stringify(alumno)}, event)'  class="btn btn-outline-danger btn-sm" value="DEL" /></td>
+                    </tr>
+                `;
+            });
+            document.querySelector("#tblConsultaAlumnos > tbody").innerHTML = filas;
+}
+async function eliminarAlumno(alumno, e) {
+        e.preventDefault();
 
-         async function listarAlumnos(buscar = '') {
-             let alumnos = await obtenerAlumnos(buscar);
-             let filas: string = ''; 
+        if (confirm(`Esta seguro de eliminar ${alumno.nombre.trim()}?`)) {
+            const respuesta = await fetch(`/api/Alumnos/${alumno.idAlumno}`, {
+                method: 'DELETE',
+                headers: { "Content-Type": "application/json" }
+            }), datos = await respuesta.text();
+            if (datos && datos.length > 0) {
+                alert(`Error ${datos}`);
+                return;
+            }
+            listarAlumnos(txtBuscarAlumno.value || '');
+        }
 
-             alumnos.forEach((alumno: any) => {
-                 filas += `
-                     <tr>
-                         <td>${alumno.codigo}</td>
-                         <td>${alumno.nombre}</td>
-                         <td>${alumno.direccion}</td>
-                         <td>${alumno.telefono}</td>
-                         <td>${alumno.email}</td>
-                     </tr>
-                 `;
-             });
-
-          
-             const tbody = document.querySelector("#tblConsultaAlumnos > tbody");
-             if (tbody) {
-                 tbody.innerHTML = filas;
-             }
-         }
- </script>
+}
+function mostrarDatosAlumno(alumno) {
+        modificarAlumno(alumno);
+}
+</script>
