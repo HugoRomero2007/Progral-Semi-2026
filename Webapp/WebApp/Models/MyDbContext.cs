@@ -11,10 +11,15 @@ namespace WebApp.Models
 
         public DbSet<Alumno> Alumnos { get; set; }
 
+        public DbSet<Materia> Materias { get; set; }
+
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Alumno>().HasKey(a => a.IdAlumnos);
+            modelBuilder.Entity<Materia>().HasKey(a => a.IdMateria);
         }
     }
 }

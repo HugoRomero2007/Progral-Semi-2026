@@ -1,4 +1,0 @@
-C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\wwwroot\views\alumno.html
-C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\wwwroot\views\app.js
-C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\wwwroot\views\busqueda_alumno.html
-C:\Users\alexy\Desktop\Programacion\Webapp\WebApp\wwwroot\views\index.html
