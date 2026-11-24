@@ -13,6 +13,8 @@ namespace WebApp.Models
 
         public DbSet<Materia> Materias { get; set; }
 
+        public DbSet<Docente> Docentes { get; set; }
+
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -20,6 +22,7 @@ namespace WebApp.Models
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Alumno>().HasKey(a => a.IdAlumnos);
             modelBuilder.Entity<Materia>().HasKey(a => a.IdMateria);
+            modelBuilder.Entity<Docente>().HasKey(a => a.IdDocente);
         }
     }
 }
