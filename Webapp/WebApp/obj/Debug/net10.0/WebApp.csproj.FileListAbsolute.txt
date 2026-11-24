@@ -171,6 +171,8 @@ C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\refint\Web
 C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\WebApp.pdb
 C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\WebApp.genruntimeconfig.cache
 C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\ref\WebApp.dll
-C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\compressed\q9q0gic0ss-{0}-q1u88p657s-q1u88p657s.gz
-C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\compressed\49wpfja8c0-{0}-6w9oaif9xe-6w9oaif9xe.gz
-C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\compressed\vpqvmu3037-{0}-72wojdni11-72wojdni11.gz
+C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\compressed\49wpfja8c0-{0}-oxeq7ds0x0-oxeq7ds0x0.gz
+C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\compressed\vpqvmu3037-{0}-pvbfgo48fn-pvbfgo48fn.gz
+C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\compressed\txtqod5qyu-{0}-sbcyvv9ulv-sbcyvv9ulv.gz
+C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\compressed\tvs3g1c5eq-{0}-6hdrmkg04z-6hdrmkg04z.gz
+C:\Users\alexy\Desktop\Programacion I\Webapp\WebApp\obj\Debug\net10.0\compressed\q9q0gic0ss-{0}-8g8s9cas9l-8g8s9cas9l.gz

@@ -20,16 +20,21 @@ public class MateriasController : ControllerBase
         return await _context.Materias.ToListAsync(); // Corregido a 'Materias'
     }
 
-
+    // GET: api/Materia/buscar
     [HttpGet("buscar")]
-    public async Task<ActionResult<IEnumerable<Materia>>> buscarMateria([FromQuery] AlumnoBusquedaParametros parametros)
+    public async Task<ActionResult<IEnumerable<Materia>>> BuscarMateria([FromQuery]
+    MateriaBusquedaParametros parametros)
     {
         var consulta = _context.Materias.AsQueryable();
         if (!string.IsNullOrEmpty(parametros.buscar))
         {
-
             consulta = consulta.Where(materia => materia.nombre.Contains(parametros.buscar));
-
+        }
+        if (!string.IsNullOrEmpty(parametros.buscar) && consulta.Count() <= 0)
+        {
+            consulta = _context.Materias.AsQueryable();
+            //consulta = consulta.Where(materia => materia.codigo==int.Parse(parametros.buscar));
+            consulta = consulta.Where(materia => materia.codigo.ToString().Contains(parametros.buscar));
         }
         return await consulta.ToListAsync();
     }

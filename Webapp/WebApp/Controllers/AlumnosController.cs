@@ -24,15 +24,19 @@ public class AlumnosController : ControllerBase
     }
 
 
+    // GET: api/Alumno/buscar
     [HttpGet("buscar")]
-    public async Task<ActionResult<IEnumerable<Alumno>>> buscarAlumno([FromQuery] AlumnoBusquedaParametros parametros)
+    public async Task<ActionResult<IEnumerable<Alumno>>> BuscarAlumno([FromQuery] AlumnoBusquedaParametros parametros)
     {
         var consulta = _context.Alumnos.AsQueryable();
         if (!string.IsNullOrEmpty(parametros.buscar))
         {
-
-            consulta = consulta.Where(Alumno => Alumno.nombre.Contains(parametros.buscar));
-
+            consulta = consulta.Where(alumno => alumno.nombre.Contains(parametros.buscar));
+        }
+        if (!string.IsNullOrEmpty(parametros.buscar) && consulta.Count() <= 0)
+        {
+            consulta = _context.Alumnos.AsQueryable();
+            consulta = consulta.Where(alumno => alumno.codigo.Contains(parametros.buscar));
         }
         return await consulta.ToListAsync();
     }

@@ -110,7 +110,7 @@
   },
   {
     "ContainingType": "AlumnosController",
-    "Method": "buscarAlumno",
+    "Method": "BuscarAlumno",
     "RelativePath": "api/Alumnos/buscar",
     "HttpMethod": "GET",
     "IsController": true,
@@ -245,7 +245,7 @@
   },
   {
     "ContainingType": "MateriasController",
-    "Method": "buscarMateria",
+    "Method": "BuscarMateria",
     "RelativePath": "api/Materias/buscar",
     "HttpMethod": "GET",
     "IsController": true,
